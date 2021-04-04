@@ -120,53 +120,126 @@ arm-linux-g++ -Wall -Wextra TimeSpec.cpp main_td2c.cpp -o td2c.rpi2 -lrt -pthrea
 
 ## TD3
 
-##3 a)
+### a)
 For PC
 ```
 cd TD3
-arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp main_td3a.cpp -o td3a.rpi2 -lrt
+g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp main_td3a.cpp -o main_td3a -lrt
+./main_td3a 
+./main_td3a <waitTime_s>
 ```
 
 For Raspberry
 ```
 cd TD3
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp main_td3a.cpp -o td3a.rpi2 -lrt
+./td3a.rpi2
+./td3a.rpi2 <waitTime_s>
 ```
 
-# b)
+### b)
+For PC
+```
+cd TD3
+g++ -Wall -Wextra TimeSpec.cpp Timer.cpp main_td3b.cpp -o main_td3b -lrt
+./main_td3b
+./main_td3d <n>
+```
+
+For Raspberry
 ```
 cd TD3
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Timer.cpp main_td3b.cpp -o td3b.rpi2 -lrt
+./td3b.rpi2
+./td3b.rpi2 <n>
 ```
 
-# c)
+### c)
+For PC
+```
+cd TD3
+g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp Timer.cpp Looper.cpp Calibrator.cpp CpuLoop.cpp main_td3c.cpp -o main_td3c -lrt
+./main_td3c
+```
+
+Raspberry
 ```
 cd TD3
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp Timer.cpp Looper.cpp Calibrator.cpp CpuLoop.cpp main_td3c.cpp -o td3c.rpi2 -lrt -Wno-psabi
+./td3c.rpi2
 ```
 
 ## TD4
 
-# a)
+### a)
+For PC
+```
+cd TD4
+g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Increment.cpp main_td4a.cpp -o main_td4a -lrt -lpthread
+./main_td4a <nLoops> <nTasks>
+```
+
+For Raspberry
 ```
 cd TD4
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Increment.cpp main_td4a.cpp -o td4a.rpi2 -lrt -lpthread -Wno-psabi
+./td4a.rpi2 <nLoops> <nTasks>
 ```
 
-# b)
+### b)
+For PC
+```
+cd TD4
+g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Increment.cpp Mutex.cpp IncrementMutex.cpp main_td4b.cpp -o main_td4b -lrt -lpthread
+./main_td4b <nLoops> <nTasks>
+```
+
+For Raspberry
 ```
 cd TD4
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Increment.cpp Mutex.cpp IncrementMutex.cpp main_td4b.cpp -o td4b.rpi2 -lrt -lpthread -Wno-psabi
+./td4b.rpi2 <nLoops> <nTasks>
 ```
 
-# c)
+### c)
+For PC
+```
+cd TD4
+g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Mutex.cpp Semaphore.cpp SemProducer.cpp SemConsumer.cpp main_td4c.cpp -o main_td4c -lrt -lpthread
+./main_td4c <nProd> <nCons> <MaxCount>
+```
+
+For Raspberry
 ```
 cd TD4
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Mutex.cpp Semaphore.cpp SemProducer.cpp SemConsumer.cpp main_td4c.cpp -o td4c.rpi2 -lrt -lpthread -Wno-psabi
+./td4c.rpi2 <nProd> <nCons> <MaxCount>
 ```
 
-# d)
+### d)
+For PC
+```
+cd TD4
+g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Mutex.cpp FifoProducer.cpp FifoConsumer.cpp main_td4d.cpp -o main_td4d -lrt -lpthread
+./main_td4d <nProd> <nCons> <n>
+```
+
+For Raspberry
 ```
 cd TD4
 arm-linux-g++ -Wall -Wextra TimeSpec.cpp Chrono.cpp PosixThread.cpp Thread.cpp Mutex.cpp FifoProducer.cpp FifoConsumer.cpp main_td4d.cpp -o td4d.rpi2 -lrt -lpthread -Wno-psabi
+./td4d.rpi2 <nProd> <nCons> <n>
 ```
+
+## TD5
+For PC
+```
+cd TD5
+g++ -Wall -Wextra *.cpp -o main_td5 -lrt -lpthread
+./main_td5
+```
+
+For Raspberry
+```
+cd TD5
+arm-linux-g++ -Wall -Wextra *.cpp -o td5.rpi2 -lrt -lpthread -Wno-psabi
